@@ -24,7 +24,7 @@ firstStepMnist.py is a script provided by tensorflow as a demo  and learning sup
  To sum up, this script is a basic machine learning program "hello world" like. But, however it allows to understand how 
 it works.
 
-First of all, the script downloads the data set and divides it to use it efficiently. A neuronal network must never learn from validation and test data. This will make	laborious the study of any result as there will be no tracks. It may also interfer with the trainning sessions (even more if you are using the deep learning for classification and test it on pictures out of output possibilities).
+First of all, the script downloads the data set and divides it to use it efficiently. A neuronal network must never learn from validation and test data. This will make	laborious the study of any result as there will be no tracks. It may also interfer with the trainning sessions (especially if you are using the deep learning for classification and test it on pictures out of output possibilities).
 
   Once you have the right dataset, the next steps is modelization. The modelization can be divided in 3 parts:
   
