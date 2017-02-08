@@ -7,6 +7,7 @@ Nous avons cependant fais du travail peu utile a présent , notamment une réfle
 
 
  > Nous avons regarder la vidéo suivante : https://vimeo.com/180044029.
+
 Cette vidéo nous a permis d'avoir un bref aperçu de ce qu'est le Deep Learning.
 Les points clés à retenir de cette vidéo sont la manière de créer un réseaux de neurones, couches après couches. 
 Ces couches permettent entre autres un niveau d'abstraction, de plus en plus précis, des données mises en entrées du réseaux de neurones.
