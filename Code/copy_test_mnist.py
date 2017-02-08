@@ -10,5 +10,10 @@ W = tf.Variable(tf.zeros([784, 10])) # initialisation des poids à zéro pour ch
 b = tf.Variable(tf.zeros([10])) # initialisation des biais pour les 10 choix possibles.
 
 
+Donner nos résultats des tests, précision, performances...
+scripter les tests si possible.
+
+
+
 
 
