@@ -1,0 +1,49 @@
+Première semaine : Choix des visualisations demandées : 
+Voici donc les liens des visualisations choisies.
+
+
+Pour les graphes : 
+
+https://algobeans.com/2015/06/01/you-are-who-you-like/
+http://mbostock.github.io/d3/talk/20111116/bundle.html
+
+bonus : 
+http://infocaptor.com/sankey-diagram-software.php
+
+Pour les clustergrammes : 
+http://amp.pharm.mssm.edu/clustergrammer/
+bl.ocks.org/mbostock/4063582
+http://bl.ocks.org/mbostock/4063269
+
+bonus (pour les sites) : 
+http://www.infocaptor.com/bubble-my-page?url=http%3A%2F%2Fwww.univ-lyon1.fr%2F&size=800
+
+
+Camemberts : 
+http://bl.ocks.org/mbostock/3888852
+http://d3pie.org/#
+
+Camenbre :
+https://www.jasondavies.com/coffee-wheel/
+
+Multiple line chart : 
+http://bl.ocks.org/mbostock/3884955
+
+Bonus : 
+http://mbostock.github.io/d3/talk/20111116/iris-parallel.html
+
+Scatter plot : 
+http://charts.animateddata.co.uk/whatmakesushappy/
+
+Time : 
+https://github.com/marmelab/EventDrops
+
+bonus : 
+https://github.com/commodityvectors/d3-timeline
+
+Multiple bar chart : 
+http://bl.ocks.org/NPashaP/96447623ef4d342ee09b
+https://vida.io/documents/ZCzewTza4ZSzMWSBG
+
+fisheye : 
+https://bost.ocks.org/mike/fisheye/
