@@ -8,11 +8,11 @@ The first step is to train a neuronal network to classify charts.
 First of all , we choose tensorFlow API to build and train neuronal networks because :
 
 
-  - TensorFlow is quite fast and can be used with a GPU to run even faster.A GPU can handle large amounts of data in many streams, performing relatively simple operations which is excatly what we do. (we went from 260 ms to 8 ms on convolutional.py)
+  - TensorFlow is quite fast and can be used with a GPU to run even faster.  GPU can handle large amounts of data in many streams, performing relatively simple operations which is excatly what we do. (we went from 260 ms to 8 ms on convolutional.py)
 
   - TensorFlow has a great and active community and a lot of documentation which help develop faster.
   
-  - TensorFlow comes with TensorBoard a local web server which allows an user to visualize the execution, the weight values, variables flow , variables evlotion in some categories like graph, images , histograms etc ... This is a plus because tensorFlow API have some parts in "black box" and the neuronal network can be hard to read.
+  - TensorFlow comes with TensorBoard a local web server which allows an user to visualize the execution, the weight values, variables flow, variables evlotion in some categories like graph, images, histograms etc ... This is a plus because tensorFlow API have some parts in "black box" and the neuronal network can be hard to read.
   
  
  > tutorials available here https://www.tensorflow.org/tutorials/ .
@@ -57,7 +57,7 @@ This script has three functions :
 
 - Resize2gray do booth with the same number of parameters than resize.
 
-This script allows us to uses images the same parameters no matter their size / color at the beginning, in order to use them in a neuronal network as an input.
+This script allows us to uses images the same parameters no matter their size/color at the beginning, in order to use them in a neuronal network as an input.
 
 
 
