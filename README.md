@@ -11,7 +11,7 @@ First of all , we choose tensorFlow API to build and train neuronal networks bec
 
   - TensorFlow has a great and active community and a lot of documentation which help develop faster.
   
-  - TensorFlow comes with TensorBoard a local web server which allows an user to visualize execution of his neuronal network in some categories like graph, images , histograms etc ... This is a plus because tensor API have some parts in "black box" so the visualization is a great tool to understanding what really happened 
+  - TensorFlow comes with TensorBoard a local web server which allows an user to visualize the execution, the weight values, variables flow , variables evlotion in some categories like graph, images , histograms etc ... This is a plus because tensorFlow API have some parts in "black box" and the neuronal network can be hard to read.
   
  
  > tutorials available here https://www.tensorflow.org/tutorials/ .
