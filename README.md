@@ -17,6 +17,7 @@ First of all , we choose tensorFlow API to build and train neuronal networks bec
  To have quickly have global view of this platform, you can see those videos (5 minutes each)
  
  > TensorFlow : https://www.youtube.com/watch?v=2FmcHiLCwTU
+ 
  > TensorBoard : https://www.youtube.com/watch?v=3bownM3L5zM
 
 ### Installation
