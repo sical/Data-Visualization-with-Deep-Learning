@@ -6,11 +6,13 @@ The aim of this project is to explore the possibilities the deep learning can of
 
 First of all , we choose tensorFlow API to build and train neuronal networks because :
 
-  - This allows us to code in python a language we are familiar to.
 
   - TensorFlow is quite fast and can be used with a GPU to run even faster.A GPU can handle large amounts of data in many streams, performing relatively simple operations which is excatly what we do. (we went from 260 ms to 8 ms on convolutional.py)
 
   - TensorFlow has a great and active community and a lot of documentation which help develop faster.
+  
+  - TensorFlow comes with TensorBoard a local web server which allows an user to visualize execution of his neuronal network in some categories like graph, images , histograms etc ... This is a plus because tensor API have some parts in "black box" so the visualization is a great tool to understanding what really happened 
+  
  
  > tutorials available here https://www.tensorflow.org/tutorials/ .
  
