@@ -16,7 +16,7 @@ def convert2gray(ext, path, output):
 
     i = 0
     for imgp in getimgs(path):
-        img = Image.open(imgp).convert(to)
+        img = Image.open(imgp).convert(to) # convert the image to a 'L' or 'LA' format (both are black and white format)
         img.save(output + str(i) + "." + ext)
         i = i + 1
 
@@ -24,7 +24,7 @@ def getimgs(path):
     imgs = []
     valid_images = [".jpg", ".gif", ".png", ".tga"]
     for f in os.listdir(path):
-        ext = os.path.splitext(f)[1]
+        ext = os.path.splitext(f)[1] # reverse search of '.' and send it. If no '.', send empty String
         if ext.lower() not in valid_images:
             continue
         imgs.append(os.path.join(path, f))
@@ -36,7 +36,7 @@ def resize(ext, path, outputDir, width, height):
 
     i = 0
     for imgp in getimgs(path):
-        img = Image.open(imgp).resize(size, Image.ANTIALIAS)
+        img = Image.open(imgp).resize(size, Image.ANTIALIAS) # Resize the image
         img.save(outputDir + str(i) + "." + ext)
         i+=1
 
@@ -50,7 +50,9 @@ def resize2gray(ext, path, outputDir, width, height):
 
     i = 0
     for imgp in getimgs(path):
-        img = Image.open(imgp).resize(size, Image.ANTIALIAS).convert(to)
+        # Resize the image, then
+        # convert the image to a 'L' or 'LA' format (both are black and white format).
+        img = Image.open(imgp).resize(size, Image.ANTIALIAS).convert(to)  
         img.save(outputDir + str(i) + "." + ext)
         i+=1
 
