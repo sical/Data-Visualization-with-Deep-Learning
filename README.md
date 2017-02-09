@@ -10,13 +10,18 @@ First of all , we choose tensorFlow API to build and train neuronal networks bec
 
   - TensorFlow is quite fast and can be used with a GPU to run even faster.A GPU can handle large amounts of data in many streams, performing relatively simple operations which is excatly what we do. (we went from 260 ms to 8 ms on convolutional.py)
 
-  - Tensor flow has a great and active community and a lot of documentation which help develop faster.
+  - TensorFlow has a great and active community and a lot of documentation which help develop faster.
  
  > tutorials available here https://www.tensorflow.org/tutorials/ .
+ 
+ To have quickly have global view of this platform, you can see those videos (5 minutes each)
+ 
+ > TensorFlow : https://www.youtube.com/watch?v=2FmcHiLCwTU
+ > TensorBoard : https://www.youtube.com/watch?v=3bownM3L5zM
 
 ### Installation
 
-### firstStepMNIST.py
+#### firstStepMNIST
 
 firstStepMnist.py is a script provided by tensorflow as a demo  and learning support.
    > This script comes with an explanation available here https://www.tensorflow.org/tutorials/mnist/beginners/
@@ -33,5 +38,35 @@ First of all, the script downloads the data set and divides it to use it efficie
   - The loss modelization can be summarized in a function representing the loss to determine if the trainnig was efficient.
   
   - The test modelization is the function that we will use to train the algorithm in order to reduce the loss.
+
+
+#### imagePrep
+
+ImagePrep is a python script, developped by our hands, which can be used as a standalone with the main function or as an API to import.
+It uses the PIL lib to manipulates images and os to get images from a directory.
+
+This script has three functions :
+
+- Convert2gray , This function uses 3 parameters the extention of the output pictures,the directory containing the pictures and the directory where the new images will be
+
+- Resize , this function uses 2 more parameters than convert2gray which are the width and height of the new pictures
+
+- Resize2gray do booth with the same number of parameters than resize.
+
+This script allows us to uses images the same parameters no matter their size / color at the beginning, in order to use them in a neuronal network as an input.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
