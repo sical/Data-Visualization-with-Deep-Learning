@@ -26,8 +26,8 @@ First of all , we choose tensorFlow API to build and train neuronal networks bec
 ### Installation
 To run TensorFlow with python you will need to install :
 
-The folowings instruction was used in linux ubuntu 16.04 64bits based os.
-For futher information or if you are another configuration please consult tensorflow installation guide [here] (https://www.tensorflow.org/get_started/os_setup)
+The folowings instruction was used in linux ubuntu 16.04 64-bits based os.
+For futher information or if you have another configuration please consult tensorflow installation guide [here] (https://www.tensorflow.org/get_started/os_setup)
 
 - Python(2.7 or above or 3.5 or above) we choose python 3.5. numpy and Pil lib can be usefull too.
 - tensorFlow or tensorflow-gpu (gpu will run faster but requires more installations)
