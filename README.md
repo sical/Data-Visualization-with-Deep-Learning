@@ -42,7 +42,7 @@ If you want to use tensor-gpu and have an Nvidia graphics card:
 
 - CUDA
 - CUDNN
-*the folowings line can ve added to a bashrc*
+*the folowings line can be added to a bashrc*
 ``` sh
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
