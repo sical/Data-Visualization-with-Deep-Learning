@@ -93,6 +93,11 @@ This script has three functions :
 This script allows us to uses images the same parameters no matter their size/color at the beginning, in order to use them in a neuronal network as an input.
 
 
+#### Reading data
+
+Data can be read as described in those two folowing links :
+- http://stackoverflow.com/questions/37340129/tensorflow-training-on-my-own-image
+- https://www.tensorflow.org/programmers_guide/reading_data
 
 
 
