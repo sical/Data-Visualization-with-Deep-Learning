@@ -1,0 +1,2 @@
+| Taches | durée | Planning | Temps effectif | résumé de l'usage |
+| Recherche d'image du bar chart | 4h | 01/02/2017 | 3h |Nous sommes allés sur le site de block builder, et à l'aide de firefox, nous avons pu télécharger toutes les images présentes sur la page. Nous avons ainsi télécharger environ 1200 images, qu'il a fallu trier. Nous en avons supprimer un certain nombre (environ 150). Nous avons mis dans un dossier à part ce qui n'était pas des bar chart, et avons pu garder ainsi un peu plus de 400 images (240x130 pixels). |
