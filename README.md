@@ -58,7 +58,7 @@ sudo apt install libcupti-dev
 
 > Download links : [Cuda](https://developer.nvidia.com/cuda-gpus), [Cudnn](https://developer.nvidia.com/cudnn)
 
-#### firstStepMNIST
+### firstStepMNIST
 
 firstStepMnist.py is a script provided by tensorflow as a demo  and learning support.
    > This script comes with an explanation available [here](https://www.tensorflow.org/tutorials/mnist/beginners/)
@@ -77,7 +77,36 @@ First of all, the script downloads the data set and divides it to use it efficie
   - The test modelization is the function that we will use to train the algorithm in order to reduce the loss.
 
 
-#### imagePrep
+## Additional tools
+
+in progress ....
+
+### NanoNets
+
+This model have a 91 % success rate which is far more better than our CNN. This result can be explainned by the fact that nanonets is a neuronal network on top of a pre trained model. (as seen in the picture below) 
+
+<img src="http://nanonets.ai/assets/images/nn_flow.png" height="375px" width="500px"/>
+
+This overlay simply take the output of the pre-trained neuronal network and convert it into the classes we force him to.(here bar Chart or not bar chart)
+
+NanoNets is efficient and can be used with text , videos , pictures and audio , it have a free and prenium content.
+However, nanonets is a 'blackbox' tool and doesn't help us understanding what can the deep learning do to help data visualization.
+
+  > This CNN is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
+
+### Keras 
+
+  Keras is a high-level neural networks library, written in Python and capable of running on top of either TensorFlow.
+Keras aim is to speed up both research and developpent of protoypes and avanced CNN by being easy to develop and due to his modularity. 
+  
+  in progress ... ( curently reading : [keyras tutorial](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) , http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/ )
+>  More informations [here] (https://keras.io/)
+
+
+## Code Made
+
+
+### imagePrep
 
 ImagePrep is a python script, developped by our hands, which can be used as a standalone with the main function or as an API to import.
 It uses the PIL lib to manipulates images and os to get images from a directory.
@@ -92,8 +121,44 @@ This script has three functions :
 
 This script allows us to uses images the same parameters no matter their size/color at the beginning, in order to use them in a neuronal network as an input.
 
+On top of that , this script can be used with parameters as :
+ 
+- '--inp' to declare the input directory  
 
-#### Reading data
+- '--out' to declare the input directory
+
+- '--ext' to declare the extention wanted 
+          Default: 'JPG'
+
+- '--size' to declare the size of output pictures 
+            Default: 100 px
+
+Used like this , the script will use the function Resize2gray with the said parameters
+
+### BarChart.py
+
+We have made our first image classifier to analyze and distinct bar chart. However, this Convolutional Neural Networks (CNN) have a low rate of success ( between 43 % and 53 % of errors) which is pretty bad in a binary image classier.
+
+Due to our low rate of success we doubted our own data. To test it and to explore possibilities we made a model of image classifier on NanoNets  an online  neuronal network which allow you to had some class in an existing model.
+
+
+## Deep Learning Image classifier
+
+### Input
+
+in progress... 
+
+#### The Overfitting effect
+
+Overfitting is caused by trainning a CNN with only a few of data.
+
+  To avoid overfitting we can do data augmentation . This can ve sumarize to adding random noises on pictures before using them. As a result , the CNN won't be trained to only classify our dataset. Due to the fact that even with some noise we still use the same images,data augmentation isn't enough to fight agaisnt overfitting.
+
+#### The Entropic capacity
+ in progress ...
+
+
+### Reading data
 
 Data can be read as described in those two folowing links :
 - http://stackoverflow.com/questions/37340129/tensorflow-training-on-my-own-image
@@ -104,43 +169,16 @@ Data can be read as described in those two folowing links :
 In our cases we used pictures resized and converted to grey scales to reduce the size of the input. 
 This pictures are compressed in '.tar.gz' and used as numpy array.
 
-#### BarChart.py
 
-We have made our first image classifier to analyze and distinct bar chart. However, this Convolutional Neural Networks (CNN) have a low rate of success ( between 43 % and 53 % of errors) which is pretty bad in a binary image classier.
-
-Due to our low rate of success we doubted our own data. To test it and to explore possibilities we made a model of image classifier on NanoNets  an online  neuronal network which allow you to had some class in an existing model.
-
-
-#### NanoNets
-
-This model have a 91 % success rate which is far more better than our CNN. This result can be explainned by the fact that nanonets is a neuronal network on top of a pre trained model. (as seen in the picture below) 
-
-<img src="http://nanonets.ai/assets/images/nn_flow.png" height="375px" width="500px"/>
-
-This overlay simply take the output of the pre-trained neuronal network and convert it into the classes we force him to.(here bar Chart or not bar chart)
-
-NanoNets is efficient and can be used with text , videos , pictures and audio , it have a free and prenium content.
-However, nanonets is a 'blackbox' tool and doesn't help us understanding what can the deep learning do to help data visualization.
-
-  > This CNN is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
-
-#### Keras 
-
-  Keras is a high-level neural networks library, written in Python and capable of running on top of either TensorFlow.
-Keras aim is to speed up both research and developpent of protoypes and avanced CNN by being easy to develop and due to his modularity. 
-  
-  in progress ... ( curently reading : [keyras tutorial](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) , http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/ )
->  More informations [here] (https://keras.io/)
-
-#### Modelisation
-
-    
+### Modelisation
 
 in progress ... 
  curently reading 
   - https://fr.mathworks.com/help/vision/examples/image-category-classification-using-deep-learning.html
 
 topic found : simple logistic regression on top of your hidden layers .
+
+
 
 
 
