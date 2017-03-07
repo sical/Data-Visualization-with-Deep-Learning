@@ -92,7 +92,7 @@ This overlay simply take the output of the pre-trained neuronal network and conv
 NanoNets is efficient and can be used with text , videos , pictures and audio , it have a free and prenium content.
 However, nanonets is a 'blackbox' tool and doesn't help us understanding what can the deep learning do to help data visualization.
 
-  > This CNN is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
+  > Our trained model is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
 
 ### Keras 
 
