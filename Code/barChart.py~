@@ -40,9 +40,9 @@ IMAGE_SIZE = 40
 NUM_CHANNELS = 1
 PIXEL_DEPTH = 255
 NUM_LABELS = 2
-VALIDATION_SIZE = 100  # Size of the validation set.
+VALIDATION_SIZE = 65  # Size of the validation set.
 SEED = None #66478  # Set to None for random seed.
-BATCH_SIZE = 140
+BATCH_SIZE = 50
 NUM_EPOCHS = 10
 EVAL_BATCH_SIZE = 32
 EVAL_FREQUENCY = 8  # Number of steps between evaluations.
@@ -278,7 +278,7 @@ def main(_):
     tf.global_variables_initializer().run()
     print('Initialized!')
     # Loop through training steps.
-    for step in xrange(int(num_epochs * train_size)*5 // BATCH_SIZE):
+    for step in xrange(int(num_epochs * train_size) // BATCH_SIZE):
       # Compute the offset of the current minibatch in the data.
       # Note that we could use better randomization across epochs.
       offset = (step * BATCH_SIZE) % (train_size - BATCH_SIZE)
