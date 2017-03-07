@@ -120,14 +120,14 @@ This overlay simply take the output of the pre-trained neuronal network and conv
 NanoNets is efficient and can be used with text , videos , pictures and audio , it have a free and prenium content.
 However, nanonets is a 'blackbox' tool and doesn't help us understanding what can the deep learning do to help data visualization.
 
+  > This CNN is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
 
 #### Keras 
 
   Keras is a high-level neural networks library, written in Python and capable of running on top of either TensorFlow.
 Keras aim is to speed up both research and developpent of protoypes and avanced CNN by being easy to develop and due to his modularity. 
   
-
-  > This CNN is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
+>  More informations [here] (https://keras.io/)
 
 
 
