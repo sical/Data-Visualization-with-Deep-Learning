@@ -99,10 +99,35 @@ Data can be read as described in those two folowing links :
 - http://stackoverflow.com/questions/37340129/tensorflow-training-on-my-own-image
 - https://www.tensorflow.org/programmers_guide/reading_data
 
+In our cases we used pictures resized and converted to grey scales to reduce the size of the input. 
+This pictures are compressed in '.tar.gz' and used as numpy array.
+
+#### BarChart.py
+
+We have made our first image classifier to analyze and distinct bar chart. However, this Convolutional Neural Networks (CNN) have a low rate of success ( between 43 % and 53 % of errors) which is pretty bad in a binary image classier.
+
+Due to our low rate of success we doubted our own data. To test it and to explore possibilities we made a model of image classifier on NanoNets  an online  neuronal network which allow you to had some class in an existing model.
 
 
+#### NanoNets
+
+This model have a 91 % success rate which is far more better than our CNN. This result can be explainned by the fact that nanonets is a neuronal network on top of a pre trained model. (as seen in the picture below) 
+
+<img src="http://nanonets.ai/assets/images/nn_flow.png" height="375px" width="500px"/>
+
+This overlay simply take the output of the pre-trained neuronal network and convert it into the classes we force him to.(here bar Chart or not bar chart)
+
+NanoNets is efficient and can be used with text , videos , pictures and audio , it have a free and prenium content.
+However, nanonets is a 'blackbox' tool and doesn't help us understanding what can the deep learning do to help data visualization.
 
 
+#### Keras 
+
+  Keras is a high-level neural networks library, written in Python and capable of running on top of either TensorFlow.
+Keras aim is to speed up both research and developpent of protoypes and avanced CNN by being easy to develop and due to his modularity. 
+  
+
+  > This CNN is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
 
 
 
