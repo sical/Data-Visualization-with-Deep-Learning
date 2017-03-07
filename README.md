@@ -102,6 +102,14 @@ Keras aim is to speed up both research and developpent of protoypes and avanced 
   in progress ... ( curently reading : [keyras tutorial](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) , http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/ , http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/)
 >  More informations [here] (https://keras.io/)
 
+### sklearn
+
+in progress : possible use insted of tensorflow
+reading :
+- http://scikit-learn.org/stable/
+- http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/
+- https://www.quora.com/What-are-the-main-differences-between-TensorFlow-and-SciKit-Learn
+- https://sebastianraschka.com/faq/docs/tensorflow-vs-scikitlearn.html
 
 ## Code Made
 
@@ -133,7 +141,7 @@ On top of that , this script can be used with parameters as :
 - '--size' to declare the size of output pictures 
             Default: 100 px
 
-Used like this , the script will use the function Resize2gray with the said parameters
+Used like this , the script will use the function Resize2gray with the said parameters.
 
 ### BarChart.py
 
@@ -150,11 +158,13 @@ in progress...
 
 #### The Overfitting effect
 
-Overfitting is caused by trainning a CNN with only a few of data.
+Overfitting is caused by trainning a CNN with only a few of data. This cause a neuronal network to be to much specialaze as if, in your life, you only saw lumberjacks with hats you may assume that all lumberjacks have hats and use this as a
+distinction.
 
-  To avoid overfitting we can do data augmentation . This can ve sumarize to adding random noises on pictures before using them. As a result , the CNN won't be trained to only classify our dataset. Due to the fact that even with some noise we still use the same images,data augmentation isn't enough to fight agaisnt overfitting.
+##### Data augmentation
+  To avoid overfitting we can use data augmentation. This can be sumarize to adding random noises on pictures before using them. As a result , the CNN won't be trained to only classify our dataset. Due to the fact that even with some noise we still use the same images,data augmentation isn't enough to fight agaisnt overfitting.
 
-#### The Entropic capacity
+##### The Entropic capacity
  in progress ...
 
 
