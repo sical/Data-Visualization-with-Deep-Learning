@@ -175,6 +175,7 @@ This pictures are compressed in '.tar.gz' and used as numpy array.
 in progress ... 
  curently reading 
   - https://fr.mathworks.com/help/vision/examples/image-category-classification-using-deep-learning.html
+  - https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
 
 topic found : simple logistic regression on top of your hidden layers .
 
