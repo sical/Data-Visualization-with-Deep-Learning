@@ -99,6 +99,8 @@ Data can be read as described in those two folowing links :
 - http://stackoverflow.com/questions/37340129/tensorflow-training-on-my-own-image
 - https://www.tensorflow.org/programmers_guide/reading_data
 
+(curently reading  -> https://www.quora.com/How-do-we-train-neural-networks-on-images-rather-than-numerical-data)
+
 In our cases we used pictures resized and converted to grey scales to reduce the size of the input. 
 This pictures are compressed in '.tar.gz' and used as numpy array.
 
@@ -127,9 +129,19 @@ However, nanonets is a 'blackbox' tool and doesn't help us understanding what ca
   Keras is a high-level neural networks library, written in Python and capable of running on top of either TensorFlow.
 Keras aim is to speed up both research and developpent of protoypes and avanced CNN by being easy to develop and due to his modularity. 
   
+  in progress ... ( curently reading [keyras tutorial](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) , http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/ ,
 >  More informations [here] (https://keras.io/)
 
+#### Modelisation
 
+    
+
+in progress ... 
+ curently reading 
+  - https://fr.mathworks.com/help/vision/examples/image-category-classification-using-deep-learning.html
+  - 
+
+topic found : simple logistic regression on top of your hidden layers (whatever you choose for that, RBMs other autoencoders).
 
 
 
