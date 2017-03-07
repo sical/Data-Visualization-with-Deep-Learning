@@ -170,7 +170,7 @@ In our cases we used pictures resized and converted to grey scales to reduce the
 This pictures are compressed in '.tar.gz' and used as numpy array.
 
 
-### Modelisation
+### Model of Neuronal Network
 
 in progress ... 
  curently reading 
