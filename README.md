@@ -91,7 +91,7 @@ However, nanonets is a 'blackbox' tool and doesn't help us understanding what ca
 We used it to build a binary image classifier of bar chart.
 This model have a 91 % success rate which is far more better than our CNN. This result can be explainned by the fact that nanonets is a neuronal network on top of a pre trained model. (as seen in the picture below) 
 
-<img src="http://nanonets.ai/assets/images/nn_flow.png" height="345px" width="500px"/>
+                      <img src="http://nanonets.ai/assets/images/nn_flow.png" height="345px" width="500px"/>
 
 This overlay simply take the output of the pre-trained neuronal network and convert it into the classes we force him to.(here bar Chart or not bar chart).
 
