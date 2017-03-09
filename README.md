@@ -83,20 +83,23 @@ in progress ....
 
 ### NanoNets
 
+NanoNets is an online application which allow an user to build a model in a "blackbox" system .
+
+NanoNets is efficient and can be used with text , videos , pictures and audio , it have a free and prenium content.
+However, nanonets is a 'blackbox' tool and doesn't help us understanding what can the deep learning do to help data visualization
+
+We used it to build a binary image classifier of bar chart.
 This model have a 91 % success rate which is far more better than our CNN. This result can be explainned by the fact that nanonets is a neuronal network on top of a pre trained model. (as seen in the picture below) 
 
 <img src="http://nanonets.ai/assets/images/nn_flow.png" height="375px" width="500px"/>
 
-This overlay simply take the output of the pre-trained neuronal network and convert it into the classes we force him to.(here bar Chart or not bar chart)
-
-NanoNets is efficient and can be used with text , videos , pictures and audio , it have a free and prenium content.
-However, nanonets is a 'blackbox' tool and doesn't help us understanding what can the deep learning do to help data visualization.
+This overlay simply take the output of the pre-trained neuronal network and convert it into the classes we force him to.(here bar Chart or not bar chart).
 
   > Our trained model is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
 
 ### Keras 
 
-  Keras is a high-level neural networks library, written in Python and capable of running on top of either TensorFlow.
+  Keras is a high-level neural networks library, written in Python and capable of running on top of TensorFlow.
 Keras aim is to speed up both research and developpent of protoypes and avanced CNN by being easy to develop and due to his modularity. 
   
   in progress ... ( curently reading : [keyras tutorial](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) , http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/ , http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/)
@@ -161,10 +164,10 @@ in progress...
 Overfitting is caused by trainning a CNN with only a few of data. This cause a neuronal network to be to much specialaze as if, in your life, you only saw lumberjacks with hats you may assume that all lumberjacks have hats and use this as a
 distinction.
 
-##### Data augmentation
-  To avoid overfitting we can use data augmentation. This can be sumarize to adding random noises on pictures before using them. As a result , the CNN won't be trained to only classify our dataset. Due to the fact that even with some noise we still use the same images,data augmentation isn't enough to fight agaisnt overfitting.
+#### Data augmentation
+  To avoid overfitting we can use data augmentation. This can be summarized into adding random noises on pictures before using them. As a result , the CNN won't be trained to only classify our dataset. Due to the fact that even with some noise we still use the same images,data augmentation isn't enough to fight agaisnt overfitting.
 
-##### The Entropic capacity
+#### The Entropic capacity
  in progress ...
 
 
