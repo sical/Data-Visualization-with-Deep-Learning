@@ -95,6 +95,28 @@ This model have a 91 % success rate which is far more better than our CNN. This 
 
 This overlay simply take the output of the pre-trained neuronal network and convert it into the classes we force him to.(here bar Chart or not bar chart).
 
+
+On top of that, Nanonets also is a restfull application so we can use our model with an API we can made with http requests which return json objects of results  as :
+``` json 
+{
+    "message": "Model trained",
+    "result": [
+        {
+            "prediction": [
+                {
+                    "label":        "barChart",
+                    "probability":  0.3055455504251506,
+                },
+                {
+                    "label":        "not Bar Chart",
+                    "probability":  0.6944544495748495,
+                },
+            ],
+            "file":"image.jpg"
+        }
+    ]
+}
+```
   > Our trained model is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
 
 ### Keras 
