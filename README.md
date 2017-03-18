@@ -130,6 +130,11 @@ Keras aim is to speed up both research and developpent of protoypes and avanced 
 ### sklearn
 
 in progress : possible use insted of tensorflow
+
+Sklearn is an userfriendly machine learning tool which run on python.
+
+> whatch this video to see a demo using MNIST dataSets [here](https://www.youtube.com/watch?v=KTeVOb8gaD4).
+
 reading :
 - http://scikit-learn.org/stable/
 - http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/
@@ -208,12 +213,18 @@ This pictures are compressed in '.tar.gz' and used as numpy array.
 
 
 ### Model of Neuronal Network
+Modelization and which algorithm pick depends on the datasets. This is roughtly summarized as the following graph discribes.
 
+<img src="http://scikit-learn.org/stable/_static/ml_map.png" height="500px" width="500px" />
+
+> interactive map [here] (http://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)
 in progress ... 
  curently reading 
   - https://fr.mathworks.com/help/vision/examples/image-category-classification-using-deep-learning.html
   - https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
   - http://machinelearningmastery.com/binary-classification-tutorial-with-the-keras-deep-learning-library/
+  
+  currently whatching [stanford course] (https://www.youtube.com/watch?v=UzxYlbK2c7E)
 
 topic found : simple logistic regression on top of your hidden layers .
 
