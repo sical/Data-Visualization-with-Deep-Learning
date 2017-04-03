@@ -117,7 +117,8 @@ On top of that, Nanonets also is a restfull application so we can use our model 
     ]
 }
 ```
-  > Our trained model is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
+  > Our first trained model (boolean barchart /!barchart) 91% of success is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
+    > Our second trained model (4 categories classification) 97.6% of success is available [here](http://demo.nanonets.ai/classify/?appId=9bdde7d8-e4cf-46d5-a346-dc912e33487b) 
 
 ### Keras 
 
@@ -132,7 +133,22 @@ Keras aim is to speed up both research and developpent of protoypes and avanced 
 in progress : possible use insted of tensorflow
 
 Sklearn is an userfriendly machine learning tool which run on python.
+Sklearn is mainly used as an machine learning tool. The main issue in sklearn and in most machine learning solutions is the data.
+The data is the most important thing is machine learning, transform data and shape as the methods and algorithm required is quite a challenge. As a matter of fact, this is the only challenge as the main code is roughtly 50 lines with methods like :
+``` python
+  from sklearn.svm import SVC
+    iris = datasets.load_iris()
+    clf = SVC()
+    clf.fit(iris.data, iris.target)  
+    clf.fit(iris.data, iris.target_names[iris.target])  
+    SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+    list(clf.predict(iris.data[:3]))
 
+
+```
 > whatch this video to see a demo using MNIST dataSets [here](https://www.youtube.com/watch?v=KTeVOb8gaD4).
 
 reading :
