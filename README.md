@@ -247,6 +247,13 @@ in progress ...
 The inception model is a google trained neuronal network made to classify images. The training took 7 weeks on 8 Telsa K40 GPU, and nearly cost 30000$. This model was trained on 100 000 images into 1000 categories using less than 25 million parameters.
 
 
+##### Inception model graph :
+
+<img src="https://raw.githubusercontent.com/tensorflow/models/master/inception/g3doc/inception_v3_architecture.png" />
+
+As we can see in this picture, the inception model is made of multiple layers. Each layer represent an extraction from the picture. Those extraction becames more and more abstract on at each steps. It begins from basic aspects as shape and and edge to end with abstrat matrix to process with convolutionnal neuronal network.
+
+
 
 
 topic found : simple logistic regression on top of your hidden layers .
