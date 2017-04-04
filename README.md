@@ -242,6 +242,13 @@ in progress ...
   
   currently whatching [stanford course] (https://www.youtube.com/watch?v=UzxYlbK2c7E)
 
+#### The inceptionV3 model
+
+The inception model is a google trained neuronal network made to classify images. The training took 7 weeks on 8 Telsa K40 GPU, and nearly cost 30000$. This model was trained on 100 000 images into 1000 categories using less than 25 million parameters.
+
+
+
+
 topic found : simple logistic regression on top of your hidden layers .
 
 
