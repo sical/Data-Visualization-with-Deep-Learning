@@ -69,6 +69,7 @@ def extract_data(filename, num_images):
     bytestream.read(16)
     buf = bytestream.read(IMAGE_SIZE * IMAGE_SIZE * num_images * NUM_CHANNELS)
     data = numpy.frombuffer(buf, dtype=numpy.uint8).astype(numpy.float32)
+    print(data)
     data = (data - (PIXEL_DEPTH / 2.0)) / PIXEL_DEPTH
     data = data.reshape(num_images, IMAGE_SIZE, IMAGE_SIZE, NUM_CHANNELS)
     return data
@@ -118,7 +119,7 @@ def main(_):
   else:
     # Get the data.
     dirname = '/home/theo/datas/'
-    train_data_filename = dirname+'temp.tar.gz'
+    train_data_filename = dirname+'train.tar.gz'
     test_data_filename = dirname+'test.tar.gz'
     print(train_data_filename)
     #maybe_download(train_data_filename)
