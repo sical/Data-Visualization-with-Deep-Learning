@@ -118,7 +118,8 @@ On top of that, Nanonets also is a restfull application so we can use our model 
 }
 ```
   > Our first trained model (boolean barchart /!barchart) 91% of success is available [here](http://demo.nanonets.ai/classify/?appId=14e66690-6efb-46c1-a9c7-559d4b406c28) 
-    > Our second trained model (4 categories classification) 97.6% of success is available [here](http://demo.nanonets.ai/classify/?appId=9bdde7d8-e4cf-46d5-a346-dc912e33487b) 
+  
+  > Our second trained model (4 categories classification) 97.6% of success is available [here](http://demo.nanonets.ai/classify/?appId=9bdde7d8-e4cf-46d5-a346-dc912e33487b) 
 
 ### Keras 
 
