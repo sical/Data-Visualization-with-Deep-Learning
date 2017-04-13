@@ -3,6 +3,10 @@
 The aim of this project is to explore the possibilities the deep learning can offer to the data visualization domain.
 The first step is to train a neuronal network to classify charts.
 
+### Heroku temporary url :
+https://intense-falls-14934.herokuapp.com/
+
+
 ## Using and understanding tensorFlow 
 
 First of all , we choose tensorFlow API to build and train neuronal networks because :
