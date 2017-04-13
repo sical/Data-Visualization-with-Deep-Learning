@@ -1,0 +1,17 @@
+{
+  "name": "knowYourChart",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/sical/Data-Visualization-with-Deep-Learning/tree/master/Code/Web%20Api/WebApi.py"
+    }
+  ]
+}
