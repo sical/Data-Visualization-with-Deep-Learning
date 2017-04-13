@@ -201,21 +201,25 @@
             url: "./nanonetsurl",
             data: $('#canard').serialize(),
             success: function (data) {
-                console.log("success");
-                console.log(data);
                 temp = JSON.parse(data);
                 var bob = ["barChart", "lineChart","pieChart","scatterPlot"];
                 var bobby = temp.result[0].prediction;
                 var aa;
                 for (var i = 0; i < bob.length; i++) {
+<<<<<<< HEAD
+=======
                     console.log(bobby[i].probability)
+>>>>>>> a5b90eab6cfa26324d63f5a8d03f91cce9bdd33e
                     aa = document.getElementById(bob[i]);
                     tempo = (bobby[i].probability * 100);
                     if (tempo < 1) {
                         tempo = 1
                     }
+<<<<<<< HEAD
+=======
                     console.log(tempo);
                     console.log(bob[i]);
+>>>>>>> a5b90eab6cfa26324d63f5a8d03f91cce9bdd33e
                     aa.style.width = tempo + "%";
                 }
             }
