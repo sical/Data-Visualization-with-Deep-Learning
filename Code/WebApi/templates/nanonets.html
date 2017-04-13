@@ -383,24 +383,22 @@
             url: "./nanonetsurl",
             data: $('#canard').serialize(),
             success: function (data) {
-                console.log("success");
-                console.log(data);
                 temp = JSON.parse(data);
                 var bob = ["barChart", "pieChart"];
                 var bobby = temp.result[0].prediction;
-                var i = 0
+                var aa;
                 for (var i = 0; i < bob.length; i++) {
-                    console.log(bobby[i].probability)
-                    var aa = document.getElementById(bob[i]);
-                    tempo = (bobby[i].probability * 100) ;
-                    if (tempo < 1){
+                    aa = document.getElementById(bob[i]);
+                    tempo = (bobby[i].probability * 100);
+                    if (tempo < 1) {
                         tempo = 1
                     }
-                    aa.style.width = tempo+ "%";
+                    aa.style.width = tempo + "%";
                 }
             }
 
         });
+        return false;
     })
 </script>
 
