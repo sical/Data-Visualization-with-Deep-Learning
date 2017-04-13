@@ -3,7 +3,6 @@
   "scripts": {
   },
   "env": {
-        "PORT": "5000"
   },
   "formation": {
   },
