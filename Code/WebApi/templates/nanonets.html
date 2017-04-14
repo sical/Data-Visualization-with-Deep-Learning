@@ -100,7 +100,9 @@
                     <div class="card-content">
                         <form id="canard">
                             <input id="url" type="text" name="url" placeholder="Select your picture url"/>
-                            <button class="waves-effect waves-light btn" style="margin-bottom: 17px" id="urlgo">Test this chart</button>
+                            <button class="waves-effect waves-light btn" style="margin-bottom: 17px" id="urlgo">Test
+                                this chart
+                            </button>
                         </form>
                         <div class="clearBoth"><br/></div>
 
@@ -115,7 +117,7 @@
                     <div class="card-content">
                         <form id="canardlocal" style="margin-bottom:76px ">
                             <label for="imgInp" class="waves-effect waves-light btn" tabindex="0">Upload </label>
-                            <input style="display: none" type='file' id="imgInp" />
+                            <input style="display: none" type='file' id="imgInp"/>
                             <img style="visibility: hidden" id="blah" src="#" alt="your image"/>
 
                         </form>
@@ -137,7 +139,7 @@
                 <div class="card-content">
                     <p>Bar chart</p>
                     <div class="progress">
-                        <div id="barChart" class="progress-bar progress-bar-success" role="progressbar"
+                        <div id="Bar Chart" class="progress-bar progress-bar-success" role="progressbar"
                              aria-valuenow="40"
                              aria-valuemin="0" aria-valuemax="100" style="width: 10%">
                             <span class="sr-only">40% Complete (success)</span>
@@ -146,7 +148,7 @@
                     <p>Line chart</p>
                     <div class="progress">
 
-                        <div id="lineChart" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0"
+                        <div id="Line Chart" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0"
                              aria-valuemin="0" aria-valuemax="100" style="width: 10%">
                             <span class="sr-only">20% Complete</span>
                         </div>
@@ -154,7 +156,7 @@
                     <p>Pie chart</p>
                     <div class="progress">
 
-                        <div id="pieChart" class="progress-bar progress-bar-warning" role="progressbar"
+                        <div id="Pie chart" class="progress-bar progress-bar-warning" role="progressbar"
                              aria-valuenow="60"
                              aria-valuemin="0" aria-valuemax="100" style="width: 10%">
                             <span class="sr-only">60% Complete (warning)</span>
@@ -163,7 +165,7 @@
                     <p>Scatter plot</p>
                     <div class="progress">
 
-                        <div id="scatterPlot" class="progress-bar progress-bar-danger" role="progressbar"
+                        <div id="Scatter plot" class="progress-bar progress-bar-danger" role="progressbar"
                              aria-valuenow="80"
                              aria-valuemin="0" aria-valuemax="100" style="width: 10%">
                             <span class="sr-only">80% Complete</span>
@@ -204,12 +206,14 @@
                 console.log("success");
                 console.log(data);
                 temp = JSON.parse(data);
-                var bob = ["barChart", "lineChart","pieChart","scatterPlot"];
+                var bob = ["barChart", "lineChart", "pieChart", "scatterPlot"];
                 var bobby = temp.result[0].prediction;
+                console.log("-------------------");
+                console.log(bobby);
                 var aa;
                 for (var i = 0; i < bob.length; i++) {
                     console.log(bobby[i].probability)
-                    aa = document.getElementById(bob[i]);
+                    aa = document.getElementById(bobby[i].label);
                     tempo = (bobby[i].probability * 100);
                     if (tempo < 1) {
                         tempo = 1
@@ -237,15 +241,15 @@
             }
 
             reader.readAsDataURL(input.files[0]);
-            document.getElementById("canardlocal").style.margin ="0px";
+            document.getElementById("canardlocal").style.margin = "0px";
             var temp = document.getElementById("blah");
             temp.style.visibility = "visible";
-            temp.style.float= "right";
-            temp.style.display= "inline";
-            temp.style.border= "solid 2px";
-            temp.style.height="110px";
-            temp.style.width="120px";
-            temp.style.marginRight="130px";
+            temp.style.float = "right";
+            temp.style.display = "inline";
+            temp.style.border = "solid 2px";
+            temp.style.height = "110px";
+            temp.style.width = "120px";
+            temp.style.marginRight = "130px";
 
         }
         return true;
