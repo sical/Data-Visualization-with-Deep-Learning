@@ -2,290 +2,199 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Track Material Design Bootstrap Admin Template</title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="{{ url_for('static', filename='assets/materialize/css/materialize.min.css')}}" media="screen,projection" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Know your chart</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/materialize/css/materialize.min.css') }}"
+          media="screen,projection"/>
     <!-- Bootstrap Styles-->
-    <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet"/>
     <!-- FontAwesome Styles-->
-    <link href="{{ url_for('static', filename='assets/css/font-awesome.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='assets/css/font-awesome.css') }}" rel="stylesheet"/>
     <!-- Morris Chart Styles-->
-    <link href="{{ url_for('static', filename='assets/js/morris/morris-0.4.3.min.css')}}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='assets/js/morris/morris-0.4.3.min.css') }}" rel="stylesheet"/>
     <!-- Custom Styles-->
-    <link href="{{ url_for('static', filename='assets/css/custom-styles.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='assets/css/custom-styles.css') }}" rel="stylesheet"/>
     <!-- Google Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/Lightweight-Chart/cssCharts.css')}}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/Lightweight-Chart/cssCharts.css') }}">
 </head>
 <body>
-    <div id="wrapper">
-        <nav class="navbar navbar-default top-navbar" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">insert_chart</i> <strong>TRACK</strong></a>
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand waves-effect waves-dark" href="/"><i class="large material-icons">insert_chart</i>
+                <strong>TRACK</strong></a>
 
-            </div>
-            </nav>
-		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
-            </div>
-
-          <!--  <ul class="nav navbar-top-links navbar-right">
-				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown4"><i class="fa fa-envelope fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
-				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown3"><i class="fa fa-tasks fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
-				<li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
-				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>John Doe</b> <i class="material-icons right">arrow_drop_down</i></a></li>
-            </ul>-->
-        </nav>
-		<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-<li><a href="#"><i class="fa fa-user fa-fw"></i> My Profile</a>
-</li>
-<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-</li>
-<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-</li>
-</ul>
-<ul id="dropdown2" class="dropdown-content w250">
-  <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 min</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-</ul>
-<ul id="dropdown3" class="dropdown-content dropdown-tasks w250">
-<li>
-		<a href="#">
-			<div>
-				<p>
-					<strong>Task 1</strong>
-					<span class="pull-right text-muted">60% Complete</span>
-				</p>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-						<span class="sr-only">60% Complete (success)</span>
-					</div>
-				</div>
-			</div>
-		</a>
-	</li>
-	<li class="divider"></li>
-	<li>
-		<a href="#">
-			<div>
-				<p>
-					<strong>Task 2</strong>
-					<span class="pull-right text-muted">28% Complete</span>
-				</p>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
-						<span class="sr-only">28% Complete</span>
-					</div>
-				</div>
-			</div>
-		</a>
-	</li>
-	<li class="divider"></li>
-	<li>
-		<a href="#">
-			<div>
-				<p>
-					<strong>Task 3</strong>
-					<span class="pull-right text-muted">60% Complete</span>
-				</p>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-						<span class="sr-only">60% Complete (warning)</span>
-					</div>
-				</div>
-			</div>
-		</a>
-	</li>
-	<li class="divider"></li>
-	<li>
-		<a href="#">
-			<div>
-				<p>
-					<strong>Task 4</strong>
-					<span class="pull-right text-muted">85% Complete</span>
-				</p>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-						<span class="sr-only">85% Complete (danger)</span>
-					</div>
-				</div>
-			</div>
-		</a>
-	</li>
-	<li class="divider"></li>
-	<li>
-</ul>
-<ul id="dropdown4" class="dropdown-content dropdown-tasks w250">
-  <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Doe</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Today</em>
-                                    </span>
-                                </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-</ul>
-	   <!--/. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a href="index.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> Dashboard</a>
-                    </li>
-
-                    <li>
-                        <a class="active-menu waves-effect waves-dark" href="nanonets.html"><i class="fa fa-fw fa-file"></i> Nanonets</a>
-                    </li>
-                    <li>
-                        <a class="active-menu waves-effect waves-dark" href="nanonets.html"><i class="fa fa-fw fa-file"></i> Tensorflow</a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </nav>
-        <!-- /. NAV SIDE  -->
-        <div id="page-wrapper">
-		  <div class="header">
-                        <h1 class="page-header">
-                            Nanonets <small> Test your chart</small>
-                        </h1>
-						<ol class="breadcrumb">
-					  <li><a href="#">Home</a></li>
-					  <li><a href="#">Empty</a></li>
-					  <li class="active">Data</li>
-					</ol>
-
-		</div>
-            <div id="page-inner">
-
-			  <div class="row">
-
-                    <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-action">
-                         Description
-                        </div>
-                         <div class="card-content">
-						 <p>NanoNets is an online application which allow an user to build a model in a "blackbox" system . NanoNets is efficient and can be used with text , videos , pictures and audio , it have a free and premium content. We used it to build a 4 categories image classifier of chart. This model have a 97.6 % success rate. This result can be explainned by the fact that nanonets is a neuronal network on top of a pre trained model. (imagenet ) more information at <a href=" https://github.com/sical/Data-Visualization-with-Deep-Learning
-"> our github </a></p>
-                           <div class="clearBoth"><br/></div>
-
-						 </div>
-						 </div>
-
-				 <footer><p>Template by: <a href="https://webthemez.com/admin-template/">WebThemez.com</a></p></footer>
-				</div>
-             <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
         </div>
-     <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
-    <script src="{{ url_for('static', filename='assets/js/jquery-1.10.2.js')}}"></script>
+    </nav>
+    <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+</div>
 
-	<!-- Bootstrap Js -->
-    <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js')}}"></script>
+</nav>
 
-	<script src="{{ url_for('static', filename='assets/materialize/js/materialize.min.js')}}"></script>
+<nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
 
-    <!-- Metis Menu Js -->
-		<script src="{{ url_for('static', filename='assets/js/jquery.metisMenu.js')}}"></script>
-    <!-- Custom Js -->
-    <script src="{{ url_for('static', filename='assets/js/custom-scripts.js')}}"></script>
+            <li>
+                <a href="index.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> Dashboard</a>
+            </li>
+
+            <li>
+                <a class="active-menu waves-effect waves-dark" href="./nanonets"><i class="fa fa-fw fa-file"></i>
+                    Nanonets</a>
+            </li>
+            <li>
+                <a class="active-menu waves-effect waves-dark" href="./tensorflow"><i class="fa fa-fw fa-file"></i>
+                    Tensorflow</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<!-- /. NAV SIDE  -->
+<div id="page-wrapper">
+    <div class="header">
+        <h1 class="page-header">
+            Tensorflow
+            <small> Test your chart</small>
+        </h1>
+
+    </div>
+    <div id="page-inner">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-action">
+                        Description
+                    </div>
+                    <div class="card-content">
+                        <p>NanoNets is an online application which allow an user to build a model in a "blackbox" system
+                            . NanoNets is efficient and can be used with text , videos , pictures and audio , it have a
+                            free and premium content. We used it to build a 4 categories image classifier of chart. This
+                            model have a 97.6 % success rate. This result can be explainned by the fact that nanonets is
+                            a neuronal network on top of a pre trained model. (imagenet ) more information at <a href=" https://github.com/sical/Data-Visualization-with-Deep-Learning
+"> our github </a></p>
+                        <div class="clearBoth"><br/></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-action">
+                        Use an URL
+                    </div>
+                    <div class="card-content">
+                        <form id="canard">
+                            <input id="url" type="text" name="url" placeholder="Select your picture url"/>
+                            <button class="waves-effect waves-light btn" style="margin-bottom: 17px" id="urlgo">Test
+                                this chart
+                            </button>
+                        </form>
+                        <div class="clearBoth"><br/></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-action">
+                        Use your own picture
+                    </div>
+                    <div class="card-content">
+                        <form id="canardlocal" style="margin-bottom:76px ">
+                            <label for="imgInp" class="waves-effect waves-light btn" tabindex="0">Upload </label>
+                            <input style="display: none" type='file' id="imgInp" name="imgInp"/>
+                            <img style="visibility: hidden" id="blah" src="#" alt="your image"/>
+
+                        </form>
+                        <div class="clearBoth"><br/></div>
+
+                    </div>
+                </div>
+
+                <!-- /. PAGE INNER  -->
+            </div>
+        </div>
+        <div class="row"/>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-action">
+                    Matching results :
+                </div>
+
+                <div class="card-content">
+                    <p>Bar chart</p>
+                    <div class="progress">
+                        <div id="Bar Chart" class="progress-bar progress-bar-success" role="progressbar"
+                             aria-valuenow="40"
+                             aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                            <span class="sr-only">40% Complete (success)</span>
+                        </div>
+                    </div>
+                    <p>Line chart</p>
+                    <div class="progress">
+
+                        <div id="Line Chart" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0"
+                             aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                            <span class="sr-only">20% Complete</span>
+                        </div>
+                    </div>
+                    <p>Pie chart</p>
+                    <div class="progress">
+
+                        <div id="Pie chart" class="progress-bar progress-bar-warning" role="progressbar"
+                             aria-valuenow="60"
+                             aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                            <span class="sr-only">60% Complete (warning)</span>
+                        </div>
+                    </div>
+                    <p>Scatter plot</p>
+                    <div class="progress">
+
+                        <div id="Scatter plot" class="progress-bar progress-bar-danger" role="progressbar"
+                             aria-valuenow="80"
+                             aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                            <span class="sr-only">80% Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer><p>Template by: <a href="https://webthemez.com/admin-template/">WebThemez.com</a></p></footer>
+
+        <!-- /. PAGE INNER  -->
+    </div>
+
+    <!-- /. PAGE WRAPPER  -->
+</div>
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="{{ url_for('static', filename='assets/js/jquery-1.10.2.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/js/main_core.js') }}"></script>
+
+<!-- Bootstrap Js -->
+<script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/materialize/js/materialize.min.js') }}"></script>
+
+<!-- Metis Menu Js -->
+<script src="{{ url_for('static', filename='assets/js/jquery.metisMenu.js') }}"></script>
 
 
 </div>

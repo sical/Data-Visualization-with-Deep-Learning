@@ -18,8 +18,15 @@ def nanonets():
 @app.route('/nanonetsurl', methods=['POST'])
 def nanonetsurl():
     result = request.form['url']
-    print(result)
     return ru.askbasicurl(result)
+
+
+@app.route('/nanonetslocal', methods=['POST'])
+def nanonetslocal():
+    print('ttt')
+    result = request.files['local']
+    print(result)
+    return ru.askbasiclocal(result)
 
 
 @app.route('/tensorflow')

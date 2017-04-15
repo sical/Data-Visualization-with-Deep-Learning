@@ -30,7 +30,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">insert_chart</i>
+            <a class="navbar-brand waves-effect waves-dark" href="/"><i class="large material-icons">insert_chart</i>
                 <strong>TRACK</strong></a>
 
         </div>
@@ -49,11 +49,11 @@
             </li>
 
             <li>
-                <a class="active-menu waves-effect waves-dark" href="nanonets.html"><i class="fa fa-fw fa-file"></i>
+                <a class="active-menu waves-effect waves-dark" href="./nanonets"><i class="fa fa-fw fa-file"></i>
                     Nanonets</a>
             </li>
             <li>
-                <a class="active-menu waves-effect waves-dark" href="nanonets.html"><i class="fa fa-fw fa-file"></i>
+                <a class="active-menu waves-effect waves-dark" href="./tensorflow"><i class="fa fa-fw fa-file"></i>
                     Tensorflow</a>
             </li>
         </ul>
@@ -117,7 +117,7 @@
                     <div class="card-content">
                         <form id="canardlocal" style="margin-bottom:76px ">
                             <label for="imgInp" class="waves-effect waves-light btn" tabindex="0">Upload </label>
-                            <input style="display: none" type='file' id="imgInp"/>
+                            <input style="display: none" type='file' id="imgInp" name="imgInp"/>
                             <img style="visibility: hidden" id="blah" src="#" alt="your image"/>
 
                         </form>
@@ -186,6 +186,8 @@
 <!-- jQuery Js -->
 <script src="{{ url_for('static', filename='assets/js/jquery-1.10.2.js') }}"></script>
 
+<script src="{{ url_for('static', filename='assets/js/main_core.js') }}"></script>
+
 <!-- Bootstrap Js -->
 <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
 
@@ -194,72 +196,6 @@
 <!-- Metis Menu Js -->
 <script src="{{ url_for('static', filename='assets/js/jquery.metisMenu.js') }}"></script>
 
-<script type="text/javascript">
-    $("#urlgo").click(function () {
-        datau = $("#url").val();
-        console.log(datau)
-        $.ajax({
-            type: "POST",
-            url: "./nanonetsurl",
-            data: $('#canard').serialize(),
-            success: function (data) {
-                console.log("success");
-                console.log(data);
-                temp = JSON.parse(data);
-                var bob = ["barChart", "lineChart", "pieChart", "scatterPlot"];
-                var bobby = temp.result[0].prediction;
-                console.log("-------------------");
-                console.log(bobby);
-                var aa;
-                for (var i = 0; i < bob.length; i++) {
-                    console.log(bobby[i].probability)
-                    aa = document.getElementById(bobby[i].label);
-                    tempo = (bobby[i].probability * 100);
-                    if (tempo < 1) {
-                        tempo = 1
-                    }
-                    console.log(tempo);
-                    console.log(bob[i]);
-                    aa.style.width = tempo + "%";
-                }
-            }
-
-        });
-        return false;
-    })
-</script>
-
-
-<script type="text/javascript">
-    function readURL(input) {
-
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#blah').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-            document.getElementById("canardlocal").style.margin = "0px";
-            var temp = document.getElementById("blah");
-            temp.style.visibility = "visible";
-            temp.style.float = "right";
-            temp.style.display = "inline";
-            temp.style.border = "solid 2px";
-            temp.style.height = "110px";
-            temp.style.width = "120px";
-            temp.style.marginRight = "130px";
-
-        }
-        return true;
-    }
-
-    $("#imgInp").change(function () {
-        readURL(this);
-        return false;
-    });
-</script>
 
 </div>
 
