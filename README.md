@@ -206,8 +206,16 @@ Due to our low rate of success we doubted our own data. To test it and to explor
 ## Deep Learning Image classifier
 
 ### Input
-
 in progress... 
+
+### Resilving “Not a JPEG file: starts with 0x89 0x50”
+Due to our way to download images , some were misstaken as JPG insted of PNG (the head file  0x89 0x50 stands for PNG).
+I resolved this issue using a simple bash command on each directories.
+Since PIL library uses extention on names to distinguish files. This was a major issue.
+
+``` sh
+ls -1 *.jpg | xargs -n 1 bash -c 'convert "$0" "${0%.*}.jpg"'
+```
 
 #### The Overfitting effect
 
@@ -219,7 +227,6 @@ distinction.
 
 #### The Entropic capacity
  in progress ...
-
 
 ### Reading data
 
