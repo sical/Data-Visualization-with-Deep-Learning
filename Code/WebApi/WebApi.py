@@ -23,9 +23,7 @@ def nanonetsurl():
 
 @app.route('/nanonetslocal', methods=['POST'])
 def nanonetslocal():
-    print('ttt')
     result = request.files['local']
-    print(result)
     return ru.askbasiclocal(result)
 
 

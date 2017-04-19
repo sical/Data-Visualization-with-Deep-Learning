@@ -4,6 +4,7 @@
 
 
 $("#urlgo").click(function (e) {
+    showload();
     e.preventDefault();
     datau = $("#url").val();
     console.log(datau)
@@ -20,6 +21,7 @@ $("#urlgo").click(function (e) {
 })
 
 function readURL(input) {
+    showload();
     var form = new FormData();
 
     if (input.files && input.files[0]) {
@@ -84,5 +86,106 @@ function parseandload(data) {
         console.log(tempo);
         console.log(bob[i]);
         aa.style.width = tempo + "%";
+        doneload();
     }
+}
+
+
+    function pos(element) {
+        var top = 0, left = 0;
+        do {
+            top += element.offsetTop || 0;
+            left += element.offsetLeft || 0;
+            element = element.offsetParent;
+        } while (element);
+
+        return {
+            top: top,
+            left: left
+        };
+    }
+
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    var canard = document.getElementById('temp');
+    var pos = pos(canard);
+    var painting = document.getElementById('paint');
+    var paint_style = getComputedStyle(painting);
+    canvas.width = parseInt(paint_style.getPropertyValue('width'));
+    canvas.height = parseInt(paint_style.getPropertyValue('height'));
+    canvas.style.border = "solid 5px";
+
+    var mouse = {x: 0, y: 0};
+    canvas.addEventListener('mousemove', function (e) {
+        mouse.x = e.pageX - this.offsetLeft - pos.left;
+        mouse.y = e.pageY - this.offsetTop - pos.top + $('#topBar').height();
+    }, false);
+
+    ctx.lineWidth = 3;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#00cc99';
+
+    canvas.addEventListener('mousedown', function (e) {
+        ctx.beginPath();
+        ctx.moveTo(mouse.x, mouse.y);
+
+        canvas.addEventListener('mousemove', onPaint, false);
+    }, false);
+
+    canvas.addEventListener('mouseup', function () {
+        canvas.removeEventListener('mousemove', onPaint, false);
+    }, false);
+
+    var onPaint = function () {
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.stroke();
+    };
+
+    $('#canvasbtnclear').click(function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return false;
+    })
+
+    function dataURLtoBlob(dataurl) {
+    var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([u8arr], {type:mime});
+}
+
+
+    $('#canvasbtngo').click(function () {
+        var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        var blob = dataURLtoBlob(img);
+        var form = new FormData();
+        console.log(img);
+        showload();
+
+        form.append("local", blob);
+        $.ajax({
+            type: "POST",
+            url: "./nanonetslocal",
+            enctype: 'mulipart/form-data',
+            processData: false,
+            contentType: false,
+            data: form,
+            success: function (data) {
+                parseandload(data);
+
+            }
+        });
+
+    })
+
+function showload() {
+   var temp = document.getElementById("loading");
+    temp.style.visibility ="visible";
+}
+
+function doneload() {
+    var temp = document.getElementById("loading");
+    temp.style.visibility ="hidden";
 }
