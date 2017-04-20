@@ -4,7 +4,7 @@ The aim of this project is to explore the possibilities the deep learning can of
 The first step is to train a neuronal network to classify charts.
 
 ### Heroku temporary url :
-https://intense-falls-14934.herokuapp.com/
+https://knowyourcharts.herokuapp.com/
 
 
 ## Using and understanding tensorFlow 
