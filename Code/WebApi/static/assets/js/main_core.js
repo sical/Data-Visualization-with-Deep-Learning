@@ -91,101 +91,178 @@ function parseandload(data) {
 }
 
 
-    function pos(element) {
-        var top = 0, left = 0;
-        do {
-            top += element.offsetTop || 0;
-            left += element.offsetLeft || 0;
-            element = element.offsetParent;
-        } while (element);
+function pos(element) {
+    var top = 0, left = 0;
+    do {
+        top += element.offsetTop || 0;
+        left += element.offsetLeft || 0;
+        element = element.offsetParent;
+    } while (element);
 
-        return {
-            top: top,
-            left: left
-        };
-    }
-
-    var canvas = document.getElementById('myCanvas');
-    var ctx = canvas.getContext('2d');
-    var canard = document.getElementById('temp');
-    var pos = pos(canard);
-    var painting = document.getElementById('paint');
-    var paint_style = getComputedStyle(painting);
-    canvas.width = parseInt(paint_style.getPropertyValue('width'));
-    canvas.height = parseInt(paint_style.getPropertyValue('height'));
-    canvas.style.border = "solid 5px";
-
-    var mouse = {x: 0, y: 0};
-    canvas.addEventListener('mousemove', function (e) {
-        mouse.x = e.pageX - this.offsetLeft - pos.left;
-        mouse.y = e.pageY - this.offsetTop - pos.top + $('#topBar').height();
-    }, false);
-
-    ctx.lineWidth = 3;
-    ctx.lineJoin = 'round';
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = '#00cc99';
-
-    canvas.addEventListener('mousedown', function (e) {
-        ctx.beginPath();
-        ctx.moveTo(mouse.x, mouse.y);
-
-        canvas.addEventListener('mousemove', onPaint, false);
-    }, false);
-
-    canvas.addEventListener('mouseup', function () {
-        canvas.removeEventListener('mousemove', onPaint, false);
-    }, false);
-
-    var onPaint = function () {
-        ctx.lineTo(mouse.x, mouse.y);
-        ctx.stroke();
+    return {
+        top: top,
+        left: left
     };
+}
 
-    $('#canvasbtnclear').click(function () {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        return false;
-    })
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
+var canard = document.getElementById('temp');
+var pos = pos(canard);
+var painting = document.getElementById('paint');
+var paint_style = getComputedStyle(painting);
+canvas.width = parseInt(paint_style.getPropertyValue('width'));
+canvas.height = parseInt(paint_style.getPropertyValue('height'));
+canvas.style.border = "solid 5px";
 
-    function dataURLtoBlob(dataurl) {
+var mouse = {x: 0, y: 0};
+canvas.addEventListener('mousemove', function (e) {
+    mouse.x = e.pageX - this.offsetLeft - pos.left;
+    mouse.y = e.pageY - this.offsetTop - pos.top + $('#topBar').height();
+}, false);
+
+ctx.lineWidth = 3;
+ctx.lineJoin = 'round';
+ctx.lineCap = 'round';
+ctx.strokeStyle = '#00cc99';
+
+canvas.addEventListener('mousedown', function (e) {
+    ctx.beginPath();
+    ctx.moveTo(mouse.x, mouse.y);
+
+    canvas.addEventListener('mousemove', onPaint, false);
+}, false);
+
+canvas.addEventListener('mouseup', function () {
+    canvas.removeEventListener('mousemove', onPaint, false);
+}, false);
+
+var onPaint = function () {
+    ctx.lineTo(mouse.x, mouse.y);
+    ctx.stroke();
+};
+
+$('#canvasbtnclear').click(function () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    return false;
+})
+
+function dataURLtoBlob(dataurl) {
     var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
         bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
-    while(n--){
+    while (n--) {
         u8arr[n] = bstr.charCodeAt(n);
     }
-    return new Blob([u8arr], {type:mime});
+    return new Blob([u8arr], {type: mime});
 }
 
 
-    $('#canvasbtngo').click(function () {
-        var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        var blob = dataURLtoBlob(img);
-        var form = new FormData();
-        console.log(img);
-        showload();
+$('#canvasbtngo').click(function () {
+    var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    var blob = dataURLtoBlob(img);
+    var form = new FormData();
+    console.log(img);
+    showload();
 
-        form.append("local", blob);
-        $.ajax({
-            type: "POST",
-            url: "./nanonetslocal",
-            enctype: 'mulipart/form-data',
-            processData: false,
-            contentType: false,
-            data: form,
-            success: function (data) {
-                parseandload(data);
+    form.append("local", blob);
+    $.ajax({
+        type: "POST",
+        url: "./nanonetslocal",
+        enctype: 'mulipart/form-data',
+        processData: false,
+        contentType: false,
+        data: form,
+        success: function (data) {
+            parseandload(data);
 
-            }
-        });
+        }
+    });
 
-    })
+})
 
 function showload() {
-   var temp = document.getElementById("loading");
-    temp.style.visibility ="visible";
+    var temp = document.getElementById("loading");
+    temp.style.visibility = "visible";
 }
 
 function doneload() {
     var temp = document.getElementById("loading");
-    temp.style.visibility ="hidden";
+    temp.style.visibility = "hidden";
+}
+
+$(document).on('dragenter', '#drag', function () {
+    $(this).css('border', '3px dashed red');
+    return false;
+});
+
+$(document).on('dragover', '#drag', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).css('border', '3px dashed red');
+    return false;
+});
+
+$(document).on('dragleave', '#drag', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).css('border', '3px dashed green');
+    return false;
+});
+
+$(document).on('drop', '#drag', function (e) {
+    if (e.originalEvent.dataTransfer) {
+        if (e.originalEvent.dataTransfer.files.length) {
+            // Stop the propagation of the event
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).css('border', '3px dashed green');
+            // Main function to upload
+            upload(e.originalEvent.dataTransfer.files);
+        }
+    }
+    else {
+        $(this).css('border', '3px dashed #BBBBBB');
+    }
+    return false;
+});
+
+function upload(files) {
+    var f = files[0];
+
+    showload();
+    var form = new FormData();
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        $('#blah').attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(f);
+    var temp = document.getElementById("blah");
+    temp.style.visibility = "visible";
+    temp.style.float = "right";
+    temp.style.display = "inline";
+    temp.style.border = "solid 2px";
+    temp.style.height = "110px";
+    temp.style.width = "120px";
+    temp.style.marginRight = "130px";
+
+
+    form.append("local", f);
+    //console.log($('#imgInp').val());
+    $.ajax({
+        type: "POST",
+        url: "./nanonetslocal",
+        enctype: 'mulipart/form-data',
+        processData: false,
+        contentType: false,
+        data: form,
+        success: function (data) {
+            parseandload(data);
+            var temp = document.getElementById("drag");
+            temp.style.border = '0px dashed #BBBBBB';
+        }
+    });
+
+    return false;
 }
