@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import Request_Use as ru
 import os
+import Reload as rl
 
 app = Flask(__name__)
 
@@ -30,6 +31,12 @@ def nanonetslocal():
 @app.route('/tensorflow')
 def tensorflow():
     return render_template('tensorflow.html')
+
+
+@app.route('/tensorflowlocal', methods=['POST'])
+def tensorflowlocal():
+    result = request.files['local']
+    return rl.go('jpg', result)
 
 
 if __name__ == '__main__':
