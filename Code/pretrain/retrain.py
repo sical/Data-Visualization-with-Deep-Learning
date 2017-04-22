@@ -906,6 +906,7 @@ if __name__ == '__main__':
         help="""\
       Path to classify_image_graph_def.pb,
       imagenet_synset_to_human_label_map.txt, and
+      imagenet_synset_to_human_label_map.txt, and
       imagenet_2012_challenge_label_map_proto.pbtxt.\
       """
     )
