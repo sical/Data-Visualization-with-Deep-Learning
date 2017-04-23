@@ -13,7 +13,7 @@ $("#urlgo").click(function (e) {
     console.log(datau)
     $.ajax({
         type: "POST",
-        url: "./nanonetsurl",
+        url: "./tensorflowurl",
         data: $('#canard').serialize(),
         success: function (data) {
             parseandload(data);
@@ -33,7 +33,7 @@ function readURL(input) {
         reader.onload = function (e) {
             $('#blah').attr('src', e.target.result);
         }
-
+        console.log(input.files[0].name);
         reader.readAsDataURL(input.files[0]);
         document.getElementById("canardlocal").style.margin = "0px";
         var temp = document.getElementById("blah");
@@ -50,7 +50,7 @@ function readURL(input) {
         //console.log($('#imgInp').val());
         $.ajax({
             type: "POST",
-            url: "./nanonetslocal",
+            url: "./tensorflowlocal",
             enctype: 'mulipart/form-data',
             processData: false,
             contentType: false,
@@ -231,7 +231,7 @@ $(document).on('drop', '#drag', function (e) {
 
 function upload(files) {
     var f = files[0];
-
+    console.log(f.name)
     showload();
     var form = new FormData();
     var reader = new FileReader();

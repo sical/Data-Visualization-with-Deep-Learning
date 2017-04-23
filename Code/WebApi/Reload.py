@@ -41,32 +41,32 @@ def go(typ, image):
         result = sess.run(output, feed_dict={
             input: image_array
         })
-
-        datatemp = """{
+        result = result[0]
+        datatemp = {
                 'message': 'Model trained',
                 'result': [
                     {
                         'prediction': [
                             {
                                 'label':        'Bar Chart',
-                                "probability":  """ + result[3] + """,
+                                "probability":  format(result[1]),
                             },
                             {
                                 'label':        'Line Chart',
-                                "probability":  """ + result[1] + """,
+                                "probability":   format(result[2]),
                             },
                             {
                                 'label':        'Pie chart',
-                                'probability':  """ + result[2] + """,
+                                'probability':   format(result[0]),
                             },
                             {
                                 'label':        'Scatter plot',
-                                'probability':  """ + result[0] + """,
+                                'probability':  format(result[3]),
                             },
                         ],
                         'file':'image.jpg'
                     }
                 ]
-            }"""
+            }
         print(json.dumps(datatemp))
     return json.dumps(datatemp)
