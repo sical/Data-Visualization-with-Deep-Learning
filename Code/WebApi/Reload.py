@@ -27,7 +27,7 @@ def load_graph(frozen_graph_filename):
 
 
 def go(typ, image,path=None):
-    graph = load_graph(os.path.join(os.getcwd(),'graph/output_graph.pb'))
+    graph = load_graph('output_graph.pb')
 
     # We access the input and output nodes
     input = graph.get_tensor_by_name('prefix/DecodeJpeg:0')
