@@ -2,6 +2,8 @@ import tensorflow as tf
 import numpy as np
 import json
 from PIL import Image
+import os
+
 
 def load_graph(frozen_graph_filename):
     # We load the protobuf file from the disk and parse it to retrieve the 
@@ -24,7 +26,7 @@ def load_graph(frozen_graph_filename):
     return graph
 
 
-def go(typ, image):
+def go(typ, image,path=None):
     graph = load_graph('graph/output_graph.pb')
 
     # We access the input and output nodes
@@ -69,4 +71,6 @@ def go(typ, image):
                 ]
             }
         print(json.dumps(datatemp))
+        if path is not None :
+            os.remove(path)
     return json.dumps(datatemp)

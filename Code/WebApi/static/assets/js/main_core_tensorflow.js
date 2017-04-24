@@ -9,8 +9,7 @@
 $("#urlgo").click(function (e) {
     showload();
     e.preventDefault();
-    datau = $("#url").val();
-    console.log(datau)
+
     $.ajax({
         type: "POST",
         url: "./tensorflowurl",
@@ -33,7 +32,8 @@ function readURL(input) {
         reader.onload = function (e) {
             $('#blah').attr('src', e.target.result);
         }
-        console.log(input.files[0].name);
+        console.log(getType(input.files[0].name));
+
         reader.readAsDataURL(input.files[0]);
         document.getElementById("canardlocal").style.margin = "0px";
         var temp = document.getElementById("blah");
@@ -62,6 +62,13 @@ function readURL(input) {
 
     }
     return true;
+}
+
+function getType(name) {
+    temp = name.split(".");
+    type = temp[temp.length - 1];
+
+    return type
 }
 
 $("#imgInp").change(function () {
