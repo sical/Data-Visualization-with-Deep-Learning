@@ -30,7 +30,7 @@ def go(typ, image,path=None):
     print(os.getcwd())   
 #    /app/Code/WebApi/graph/output_graph.pb
 
-
+    graph=load_graph(os.path.join(os.getcwd(),'Code/WebApi/graph/output_graph.pb'))
     # We access the input and output nodes
     input = graph.get_tensor_by_name('prefix/DecodeJpeg:0')
     output = graph.get_tensor_by_name('prefix/final_result:0')
