@@ -12,3 +12,5 @@ requests
 # Wget
 # ----------------------
 wget
+
+tensorflow
