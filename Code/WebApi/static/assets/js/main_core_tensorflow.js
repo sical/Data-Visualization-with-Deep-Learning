@@ -177,7 +177,7 @@ $('#canvasbtngo').click(function () {
     form.append("local", blob);
     $.ajax({
         type: "POST",
-        url: "./tensorflowlocal",
+        url: "./tensorflowblob",
         enctype: 'mulipart/form-data',
         processData: false,
         contentType: false,

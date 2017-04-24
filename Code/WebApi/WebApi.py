@@ -60,6 +60,12 @@ def tensorflowurl():
 
     return pred
 
+@app.route('/tensorflowblob', methods=['POST'])
+def tensorflowblob():
+    result = request.files['local']
+    print(result.filename)
+    return rl.go('png',result)
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
