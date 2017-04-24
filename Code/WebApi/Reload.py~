@@ -27,7 +27,7 @@ def load_graph(frozen_graph_filename):
 
 
 def go(typ, image,path=None):
-    print(os.path.isfile('output_graph.pb'))
+    print(os.path.isFile('output_graph.pb'))
     graph = load_graph('output_graph.pb')
 
     # We access the input and output nodes
