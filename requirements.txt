@@ -15,4 +15,4 @@ wget
 
 tensorflow
 
-PIL
+Pillow
