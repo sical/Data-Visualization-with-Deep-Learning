@@ -14,5 +14,3 @@ requests
 wget
 
 tensorflow
-
-PIL
