@@ -4,7 +4,8 @@ import numpy as np
 from PIL import Image
 
 def main(_):
-    go('jpg',imgpath)
+    print('lalalal')
+    go('jpg','pic_007.jpg')
 
 def load_graph(frozen_graph_filename):
     # We load the protobuf file from the disk and parse it to retrieve the 
@@ -26,39 +27,53 @@ def load_graph(frozen_graph_filename):
         )
     return graph
 
-def go(typ,imgpath):
-    png_data = tf.placeholder(tf.string, shape=[])
-    decoded_png = tf.image.decode_png(png_data, channels=3)
-
-    # We use our "load_graph" function
-    graph = load_graph(args.frozen_model_filename)
-
-    # We can verify that we can access the list of operations in the graph
-    for op in graph.get_operations():
-        print(op.name)
-        # prefix/Placeholder/inputs_placeholder
-        # ...
-        # prefix/Accuracy/predictions
-        
-    # We access the input and output nodes 
-    x = graph.get_tensor_by_name('prefix/DecodeJpeg:0')
-    y = graph.get_tensor_by_name('prefix/final_result:0')
-
-
-    image = Image.open(imgpath)
-    image_array=None
+def go(typ, image):
+    print("laalalalala")
+    graph = load_graph('graph/output_graph.pb')
+    
+    # We access the input and output nodes
+    input = graph.get_tensor_by_name('prefix/DecodeJpeg:0')
+    output = graph.get_tensor_by_name('prefix/final_result:0')
+    image = Image.open(image)
+    image_array = None
     if typ == 'jpg':
         image_array = np.array(image)
     else:
-         image_array = np.array(image)[:, :, 0:3]  # Select RGB channels only.
+        image_array = np.array(image)[:, :, 0:3]  # Select RGB channels only.
 
     with tf.Session(graph=graph) as sess:
-        y_out = sess.run(y, feed_dict={
-          x : image_array
+        result = sess.run(output, feed_dict={
+            input: image_array
         })
-        print(y_out)
-        print(max(max(y_out)))
 
+        datatemp = {
+                'message': 'Model trained',
+                'result': [
+                    {
+                        'prediction': [
+                            {
+                                'label':        'Bar Chart',
+                                "probability":  """ + result[3] + """,
+                            },
+                            {
+                                'label':        'Line Chart',
+                                "probability":  """ + result[1] + """,
+                            },
+                            {
+                                'label':        'Pie chart',
+                                'probability':  """ + result[2] + """,
+                            },
+                            {
+                                'label':        'Scatter plot',
+                                'probability':  """ + result[0] + """,
+                            },
+                        ],
+                        'file':'image.jpg'
+                    }
+                ]
+            }
+        print(json.dumps(datatemp))
+    return json.dumps(datatemp)
 
 
 if __name__ == '__main__':
