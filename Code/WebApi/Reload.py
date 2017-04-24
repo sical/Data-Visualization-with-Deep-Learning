@@ -32,9 +32,9 @@ def go(typ, image,path=None):
         for f in files:
             fullpath = os.path.join(root, f)
             if os.path.splitext(fullpath)[1] == '.pb':
-                print fullpath
-    print(os.path.isfile('output_graph.pb'))
-    graph = load_graph('output_graph.pb')
+                print (fullpath)
+    print(os.path.isfile('outputgraph.pb'))
+    graph = load_graph('outputgraph.pb')
 
     # We access the input and output nodes
     input = graph.get_tensor_by_name('prefix/DecodeJpeg:0')
