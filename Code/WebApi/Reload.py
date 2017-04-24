@@ -27,14 +27,9 @@ def load_graph(frozen_graph_filename):
 
 
 def go(typ, image,path=None):
-    
-    for root, dirs, files in os.walk(os.getcwd()):
-        for f in files:
-            fullpath = os.path.join(root, f)
-            if os.path.splitext(fullpath)[1] == '.pb':
-                print (fullpath)
-    print(os.path.isfile('outputgraph.pb'))
-    graph = load_graph('outputgraph.pb')
+    print(os.getcwd())   
+#    /app/Code/WebApi/graph/output_graph.pb
+
 
     # We access the input and output nodes
     input = graph.get_tensor_by_name('prefix/DecodeJpeg:0')
