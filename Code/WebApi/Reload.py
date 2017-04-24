@@ -1,8 +1,8 @@
 import tensorflow as tf
 import numpy as np
 import json
-from PIL import Image
 import os
+from PIL import Image
 
 
 def load_graph(frozen_graph_filename):
