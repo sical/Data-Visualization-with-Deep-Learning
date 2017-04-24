@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 def main(_):
-    go('jpg',imgpath)
+    go('jpg','pic_007.jpg')
 
 def load_graph(frozen_graph_filename):
     # We load the protobuf file from the disk and parse it to retrieve the 
