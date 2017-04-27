@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Know your chart</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/materialize/css/materialize.min.css') }}"
+          media="screen,projection"/>
+    <!-- Bootstrap Styles-->
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="{{ url_for('static', filename='assets/css/font-awesome.css') }}" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+    <link href="{{ url_for('static', filename='assets/js/morris/morris-0.4.3.min.css') }}" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="{{ url_for('static', filename='assets/css/custom-styles.css') }}" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/Lightweight-Chart/cssCharts.css') }}">
+</head>
+<body>
+<div id="wrapper">
+    <nav id="topBar" class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand waves-effect waves-dark" href="/"><i class="large material-icons">insert_chart</i>
+                <strong>Charts</strong></a>
+
+        </div>
+    </nav>
+    <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+</div>
+
+</nav>
+
+<nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+
+            <li>
+                <a href="/" class="waves-effect waves-dark"><i class="fa fa-fw fa-file "></i> Get Started</a>
+            </li>
+
+            <li>
+                <a class="active-menu waves-effect waves-dark" href="./nanonets"><i class="fa fa-fw fa-file"></i>
+                    Nanonets</a>
+            </li>
+            <li>
+                <a class="active-menu waves-effect waves-dark" href="./tensorflow"><i class="fa fa-fw fa-file"></i>
+                    Tensorflow</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<!-- /. NAV SIDE  -->
+<div id="page-wrapper">
+    <div class="header">
+        <h1 class="page-header">
+            Know Your Charts
+            <small> Test it</small>
+        </h1>
+
+    </div>
+    <div id="page-inner">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-action">
+                        Description
+                    </div>
+                    <div class="card-content">
+                        <p>This project, aim to help us see charts differently. The deep learning discriminative model allows us to put charts into categories.
+                            While classifying chart, a convolutional  neuronal network, is forced to "compress" characteristics of the given picture as he have as many inputs as pixel but only one output.
+                            So we can see what makes ,for example , a bar chart seen as bar chart by this model. Through this web site, you will be able to "test" your charts to see if the neuronal network can find out what it is,
+                            and "compare" it to the norms. You can also see the limits of models and seek for fool the model with ambiguous pictures.
+                            More information at <a href=" https://github.com/sical/Data-Visualization-with-Deep-Learning
+"> our github </a></p>
+                        <div class="clearBoth"><br/></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-action">
+                        Tensorflow
+                    </div>
+                    <div style="text-align: center" class="card-content">
+                        Tensorflow is a powerfull deep learning tool with some examples. Tensorflow can be considered as solution as a lot of operations are done in background.
+                        Even if tensorflow have some build in function, a lot of work have to be done manually. We used python as an API to make this model.
+                        Coding in tensorflow can be summarized as make graph nodes and feeding them with tensor flowing through the graph. Our is based on the google's model named inceptionv3 trainned with
+                        imagenet dataset (1000 classes and more than 1 million pictures). We used transfer learning to retrain this model to classify our 4 categories. This modelhave 97.5% succes rate
+                        <a href="https://www.tensorflow.org/">Tensorflow home page</a>
+
+                        <div class="clearBoth"><br/></div>
+                        <a class="waves-effect waves-light btn" href="tensorflow.html">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-action">
+                        Nanonets
+                    </div>
+                    <div  style="text-align: center" class="card-content" >
+                        Nanonets is a user friendly online solution. It allows users to simply build a model from their own images. Nanonets also use transfer learning on inceptionV3 model.
+                        You just have to provide the pictures and "label" them (upload them into the right categories).This model have a 98.2% success rate
+                        <a href="https://nanonets.com/index.html">Nanonets home page</a>
+                        <div class="clearBoth"><br/></div>
+                        <a style="margin-bottom: 29px;margin-top: 29px" class="waves-effect waves-light btn" href="nanonets.html">Get Started</a>
+                    </div>
+
+                </div>
+
+                <!-- /. PAGE INNER  -->
+            </div>
+        </div>
+        </div>
+        <footer><p>Template by: <a href="https://webthemez.com/admin-template/">WebThemez.com</a></p></footer>
+
+        <!-- /. PAGE INNER  -->
+    </div>
+
+    <!-- /. PAGE WRAPPER  -->
+</div>
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="{{ url_for('static', filename='assets/js/jquery-1.10.2.js') }}"></script>
+
+<!-- Bootstrap Js -->
+<script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='assets/materialize/js/materialize.min.js') }}"></script>
+
+<!-- Metis Menu Js -->
+<script src="{{ url_for('static', filename='assets/js/jquery.metisMenu.js') }}"></script>
+
+
+</div>
+
+</body>
+
+</html>
